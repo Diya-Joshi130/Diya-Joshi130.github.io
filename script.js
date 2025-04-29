@@ -182,5 +182,27 @@ if (
     }
   )
 }
+
+// WORD-SCROLL WHEEL HANDLER
+window.addEventListener('DOMContentLoaded', () => {
+  const scrollWrapper = document.querySelector('.word-scroll');
+  const list = document.querySelector('.scroll-list');
+  const items = Array.from(list.children);
+  let idx = 0;
+  const maxIdx = items.length - 1;
+
+  const update = () => {
+    const h = items[0].offsetHeight;
+    list.style.transform = `translateY(${-idx * h}px)`;
+  };
+
+  scrollWrapper.addEventListener('wheel', (e) => {
+    e.preventDefault();  // kill page scroll
+    if (e.deltaY > 0) idx = Math.min(maxIdx, idx + 1);
+    else             idx = Math.max(0, idx - 1);
+    update();
+  }, { passive: false });
+});
+
 // run it
 update()

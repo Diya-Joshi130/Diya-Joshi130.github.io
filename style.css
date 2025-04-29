@@ -224,8 +224,35 @@
   .snap-container > div {
     scroll-snap-align: start;
     height: 2em; /* match container height */
-  }   
-}
+
+    /* make “I am a” + word list line up */
+    .content.fluid h2 {
+      display: flex;
+      align-items: center;
+    }
+
+    /* mask off all but one line of words */
+    .word-scroll {
+      display: inline-block;
+      overflow: hidden;
+      height: 1lh;        /* one line of text */
+    }
+
+    /* reset list styling + animate shifts */
+    .scroll-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      transition: transform 0.4s ease;  /* smooth slide */
+    }
+
+    /* each <li> is exactly one line high */
+    .scroll-list li {
+      height: 1lh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+}}}
 
 @layer base {
   :root {
