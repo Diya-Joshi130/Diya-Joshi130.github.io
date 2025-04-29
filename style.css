@@ -216,15 +216,15 @@
 
 @layer snap {
   .snap-container {
-    scroll-snap-type: y mandatory;
+    height: 2em; /* height of one word */
     overflow-y: scroll;
-    height: 100vh;
+    scroll-snap-type: y mandatory;
   }
   
-  .snap-container > section {
+  .snap-container > div {
     scroll-snap-align: start;
-    min-height: 100vh;
-  } 
+    height: 2em; /* match container height */
+  }   
 }
 
 @layer base {
