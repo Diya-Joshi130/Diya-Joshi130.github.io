@@ -228,14 +228,14 @@
     /* make “I am a” + word list line up */
     .content.fluid h2 {
       display: flex;
-      align-items: center;
+      align-items: baseline;
     }
 
     /* mask off all but one line of words */
     .word-scroll {
       display: inline-block;
       overflow: hidden;
-      height: 1lh;        /* one line of text */
+      height: 1em;        /* one line of text */
     }
 
     /* reset list styling + animate shifts */
@@ -248,7 +248,8 @@
 
     /* each <li> is exactly one line high */
     .scroll-list li {
-      height: 1lh;
+      height: 1em;
+      line-height: 1em;
       display: flex;
       align-items: center;
       justify-content: center;
