@@ -38,7 +38,7 @@
       animation-range: entry 50% exit 50%, entry 40% entry 50%,
         exit 30% exit 40%;
       animation-timeline: --list;
-      ul {
+      ul.scroll-items {
         view-timeline: --list;
       }
     }
@@ -79,7 +79,7 @@
       --lightness: 75%;
     }
   }
-  ul {
+  ul.scroll-items {
     --step: calc((var(--end) - var(--start)) / (var(--count) - 1));
   }
   li:not(:last-of-type) {
@@ -155,7 +155,7 @@
     height: fit-content;
     font-weight: 600;
   }
-  ul {
+  ul.scroll-items {
     font-weight: 600;
     padding-inline: 0;
     margin: 0;
@@ -262,7 +262,7 @@
   body {
     display: grid;
     place-items: center;
-    background: light-dark(#fefdfd, #14002e);
+    background: light-dark(#c6c69bbc, #14002e);
     min-height: 100vh;
     font-family: 'Geist', 'SF Pro Text', 'SF Pro Icons', 'AOS Icons',
       'Helvetica Neue', Helvetica, Arial, sans-serif, system-ui;
